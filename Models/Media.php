@@ -1,11 +1,11 @@
 <?php
 class Media {
     protected $type;
-    protected $url;
+    protected $path;
 
-    public function __construct($type, $url) {
+    public function __construct($type, $path) {
         $this->type = $type;
-        $this->url = $url;
+        $this->path = $path;
     }
 
     public function getType() {
@@ -13,6 +13,6 @@ class Media {
     }
 
     public function getUrl() {
-        return $this->url;
+        return $this->path;
     }
 }

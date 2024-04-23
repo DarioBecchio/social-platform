@@ -1,9 +1,6 @@
 <?php
 
-define('DB_SERVERNAME', 'localhost:3306');
-define('DB_USERNAME','root');
-define('DB_PASSWORD','root');
-define('DB_NAME','1_pt_social_network');
+
 
 $connection = new mysqli(DB_SERVERNAME,DB_USERNAME,DB_PASSWORD,DB_NAME);
 
@@ -24,9 +21,11 @@ var_dump($result);
 
 
 <?php 
-include './head.php';
+include __DIR__ . '/layout/head.php';
 
 ?>
+
+   
 
   <!-- Jumbotron -->
   <div class="jumbotron jumbotron-fluid">
@@ -41,6 +40,6 @@ include './head.php';
   
 </body>
 <?php
-include './footer.php';
+include __DIR__ . '/layout/footer.php';
 ?>
 </html>
