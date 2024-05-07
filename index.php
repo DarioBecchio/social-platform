@@ -1,26 +1,11 @@
 <?php
 
 
-
-$connection = new mysqli(DB_SERVERNAME,DB_USERNAME,DB_PASSWORD,DB_NAME);
-
-if ($connection && $connection -> connect_error) {
-    echo "Connection failed: " . $connection->connect_error;
-    die;
+if (session_status() === PHP_SESSION_NONE) {
+  session_start();
 }
 
-var_dump($connection);
 
-$sql = "SELECT * FROM `posts`";
-
-$result = $connection->query($sql);
-var_dump($result);
-
-
-?>
-
-
-<?php 
 include __DIR__ . '/layout/head.php';
 
 ?>
