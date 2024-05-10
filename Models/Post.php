@@ -1,4 +1,5 @@
 <?php
+require_once 'Media.php';
 class Post {
     protected $id;
     protected $title;
@@ -10,6 +11,18 @@ class Post {
         $this->title = $title;
         $this->content = $content;
         $this->media = $media;
+        
+        foreach ($media as $m) {
+        if ($m instanceof Media) {
+            $this->media[] = $m;
+        }
+    }
+
+    }
+
+    
+    public function getId() {
+        return $this->id;
     }
 
     public function getTitle() {
@@ -24,11 +37,13 @@ class Post {
         return $this->media;
     }
 
-    public function displayMedia() {
+    /*public function displayMedia() {
         $mediaContent = '';
         foreach ($this->media as $media) {
             $mediaContent .= $media->display() . "<br>";
         }
         return $mediaContent;
-    }
+    }*/
 }
+
+//$bestHotel24 = new Post ('1','Best Hotel 2024', 'This is a review of hotels', $media1,$media2);

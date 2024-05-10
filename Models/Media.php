@@ -1,5 +1,6 @@
 <?php
 class Media {
+
     protected $id;
     protected $type;
     protected $path;
@@ -10,7 +11,9 @@ class Media {
         $this->path = $path;
     }
 
-   
+    public function getId() {
+        return $this->type;
+    }
 
     public function getType() {
         return $this->type;
