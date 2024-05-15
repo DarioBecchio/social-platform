@@ -21,7 +21,11 @@ include __DIR__ . '/layout/head.php';
       <a class="btn btn-secondary btn-lg" href="#" role="button">Login</a>
     </div>
   </div>
-
+  <div>
+    <?php
+    include __DIR__ . 'featuredPost.php';
+    ?>
+  </div>
   
 </body>
 <?php

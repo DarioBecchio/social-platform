@@ -3,13 +3,13 @@ require_once 'Media.php';
 class Post {
     protected $id;
     protected $title;
-    protected $content;
+    protected $tags;
     protected $media = [];
 
-    public function __construct($id,$title, $content, Media...$media) {
+    public function __construct($id,$title, $tags, Media...$media) {
         $this->id = $id;
         $this->title = $title;
-        $this->content = $content;
+        $this->tags = $tags;
         $this->media = $media;
         
         foreach ($media as $m) {
@@ -29,8 +29,8 @@ class Post {
         return $this->title;
     }
 
-    public function getContent() {
-        return $this->content;
+    public function getTags() {
+        return $this->tags;
     }
 
     public function getMedia() {
