@@ -20,13 +20,7 @@ include __DIR__ . '/layout/head.php';
       <a class="btn btn-primary btn-lg" href="#" role="button">Sign Up</a>
       <a class="btn btn-secondary btn-lg" href="#" role="button">Login</a>
     </div>
-  </div>
-  <div>
-    <?php
-    include __DIR__ . 'featuredPost.php';
-    ?>
-  </div>
-  
+  </div> 
 </body>
 <?php
 include __DIR__ . '/layout/footer.php';

@@ -5,6 +5,22 @@ require_once './helpers/db.php';
 
 //creiamo 2 oggetti di classe Media
 
+/* 
+SELECT medias.* 
+FROM medias 
+JOIN media_Post ON medias.id = media_post.media_id 
+WHERE media_Post.post_id = 1 AND medias.type = 'photo';
+
+SELECT medias.* 
+FROM medias 
+JOIN media_Post ON medias.id = media_post.media_id 
+WHERE media_Post.post_id = 1 AND medias.type = 'video';
+
+
+*/
+
+
+
 $image = new Media('1', 'photo' , 'http://example.com/photo.jpg');
 $video = new Media('2', 'video', 'http://example.com/photo.jpg');
 
@@ -44,12 +60,12 @@ include './layout/header.php';
 ?>
 <body>
     <section>
-      <?php foreach ($featuredPosts as $post) { ?>
-          <article id="<?php $post->getId(); ?>">
-            <h3><?php $post->getTitle(); ?></h3>
+      <?php foreach ($featuredPosts as $post) {?>
+          <article id="<?= $post->getId(); ?>">
+            <h3><?= $post->getTitle(); ?></h3>
             <ul class="tags">
               <?php foreach ($post->getTags() as $tag) { ?>
-                <li><?php $tag ?></li>
+                <li><?= $tag ?></li>
               <?php } ?>
             </ul>
           </article>
