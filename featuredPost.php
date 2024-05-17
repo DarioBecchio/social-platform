@@ -24,6 +24,8 @@ WHERE media_Post.post_id = 1 AND medias.type = 'video';
 $image = new Media('1', 'photo' , 'http://example.com/photo.jpg');
 $video = new Media('2', 'video', 'http://example.com/photo.jpg');
 
+$imgsql = "SELECT medias.* FROM medias JOIN media_Post ON medias.id = media_post.media_id WHERE media_Post.post_id = 1 AND medias.type = 'photo'";
+
 //craiamo 2 post con 1 media ciascuno
 
 $post = new Post('1', 'Vacanze 2024' , 'Summer holiday', $image);
