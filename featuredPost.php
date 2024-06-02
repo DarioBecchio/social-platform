@@ -89,59 +89,101 @@ include __DIR__ . '/layout/header.php';
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <title>Document</title>
   <style>
-    li{
-      list-style: none;     
+    li {
+      list-style: none;
     }
 
-    a{
+    a {
       text-decoration: none;
+      color: #007bff;
     }
 
-    img{
-      width: 100%;
+    a:hover {
+      text-decoration: underline;
     }
 
-    video{
+    img {
+      height: 100%;
       width: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    video {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .zoom-container:hover img,
+    .zoom-container:hover video {
+      transform: scale(1.2);
+    }
+
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    .tags {
+      padding-left: 0;
+      margin-top: 1rem;
+    }
+
+    .tags li {
+      margin-right: 0.5rem;
+    }
+
+    .tags a {
+      padding: 0.25rem 0.5rem;
+      background-color: #f8f9fa;
+      border: 1px solid #dee2e6;
+      border-radius: 0.25rem;
+      color: #007bff;
+    }
+
+    .tags a:hover {
+      background-color: #e2e6ea;
+    }
+
+    .card-image-top {
+      margin-bottom: 1rem;
     }
   </style>
 </head>
+
 <body>
   <section>
     <div class="container my-5">
       <div class="row">
         <?php foreach ($featuredPosts as $post) { ?>
-          <div class="col-4 mb-4">
-            
-              <div class="card container">
-                <article id="<?= $post->getId(); ?>">
-                  <h3><?= $post->getTitle(); ?></h3>
-                  <div class="card-image-top d-flex row">
-                    <?php foreach ($post->getMedia() as $media) { ?>
-                      <div class="col-4"><?= $media->display() ?></div>                
+          <div class="col-12 col-md-6 mb-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h3 class="card-title"><?= $post->getTitle(); ?></h3>
+                <div class="card-image-top row">
+                  <?php foreach ($post->getMedia() as $media) { ?>
+                    <div class="col-4 zoom-container my-2"><?= $media->display() ?></div>
+                  <?php } ?>
+                </div>
+                <div class="card-body">
+                  <ul class="tags d-flex flex-wrap">
+                    <?php foreach ($post->getTags() as $tag) { ?>
+                      <li><a href=""><?= $tag ?></a></li>
                     <?php } ?>
-                  </div>            
-                    
-                  <ul class="tags">
-                      <?php foreach ($post->getTags() as $tag) { ?>
-                        <li><?= $tag ?></li>
-                      <?php } ?>
                   </ul>
-                </article>    
+                </div>                
               </div>
-             
+            </div>
           </div>
-          <?php } ?>
+        <?php } ?>
       </div>
-      
     </div>
-    
-      
   </section>
 </body>
 
-</html>
+<?php include './layout/footer.php'; ?>
 
-<?php
-include './layout/footer.php';
-?>
+</html>

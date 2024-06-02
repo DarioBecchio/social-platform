@@ -50,10 +50,10 @@ include __DIR__ . '/layout/header.php';
             </tr>
         <?php endwhile;?>
       </tbody>
-
-
+    </table>
+</div>
 </body> 
-</html>
 <?php
 include __DIR__ . '/layout/footer.php';
 ?>
+</html>

@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <title>Document</title>
+    <style>
+    .header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+    </style>
 </head>
 <body>
     <!-- Navbar -->
