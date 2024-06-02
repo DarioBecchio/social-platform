@@ -6,7 +6,7 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 
-include __DIR__ . '/layout/head.php';
+include __DIR__ . '/layout/header.php';
 
 ?>
 

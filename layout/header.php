@@ -19,16 +19,13 @@
           <a class="nav-link" href="./index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./profile.php">Profile</a>
+          <a class="nav-link" href="./featuredPost.php">Post</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./messages.php">Messages</a>
+          <a class="nav-link" href="./users.php">Utenti</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Logout</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="users.php">Utenti</a>
         </li>
       </ul>
     </div>
